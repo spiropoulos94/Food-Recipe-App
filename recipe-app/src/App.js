@@ -15,6 +15,7 @@ function App() {
   useEffect(() => {
     getRecipes();
     console.log("we are fetching data");
+    // eslint-disable-next-line
   }, [query]);
 
   const getRecipes = async () => {
