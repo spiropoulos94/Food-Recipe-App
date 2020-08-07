@@ -4,7 +4,7 @@ import Recipe from "./Recipe";
 
 function App() {
   const APP_ID = "b52397b0";
-  const APP_KEY = "eaf7044334821088241a46cc61c71ae7	";
+  const APP_KEY = "de814a8d8bde0d4e9a2d7f7df2ae56c1";
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
@@ -25,6 +25,7 @@ function App() {
     const data = await response.json();
     console.log(data.hits);
     setRecipes(data.hits);
+    console.log(data.hits);
   };
 
   function updateSearch(e) {
