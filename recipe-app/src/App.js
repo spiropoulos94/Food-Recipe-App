@@ -1,24 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Recipe from "./Recipe";
 
 function App() {
+  const APP_ID = "b52397b0";
+  const APP_KEY = "eaf7044334821088241a46cc61c71ae7	";
+
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("chicken");
+
+  //const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
+
+  useEffect(() => {
+    getRecipes();
+    console.log("we are fetching data");
+  }, [query]);
+
+  const getRecipes = async () => {
+    const response = await fetch(
+      `https://api.edamam.com/${query}?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
+    );
+    const data = await response.json();
+    console.log(data.hits);
+    setRecipes(data.hits);
+  };
+
+  function updateSearch(e) {
+    setSearch(e.target.value);
+  }
+
+  const getSearch = (e) => {
+    e.preventDefault();
+    setQuery(search);
+    setSearch("");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form className="search-form" onSubmit={getSearch}>
+        <input
+          type="text"
+          className="search-bar"
+          value={search}
+          onChange={updateSearch}
+        />
+        <button type="submit" className="search-button">
+          Search
+        </button>
+      </form>
+      {recipes.map((recipe) => (
+        <div className="recipes">
+          <Recipe
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.image}
+            ingredients={recipe.recipe.ingredients}
+          />
+        </div>
+      ))}
     </div>
   );
 }
