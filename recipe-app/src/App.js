@@ -21,8 +21,11 @@ function App() {
   const getRecipes = async () => {
     const response = await fetch(
       `https://api.edamam.com/${query}?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
+      //{ mode: "no-cors" }
     );
+
     const data = await response.json();
+
     console.log(data.hits);
     setRecipes(data.hits);
     console.log(data.hits);
