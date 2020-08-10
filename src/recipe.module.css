@@ -7,11 +7,15 @@
   justify-content: space-around;
   background: white;
   align-items: center;
-  min-width: 40%;
+  min-width: 90%;
 }
 
 .image {
   border-radius: 50%;
   width: 100px;
   height: 100px;
+}
+
+.title {
+  padding-left: 1rem;
 }
