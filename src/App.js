@@ -25,9 +25,7 @@ function App() {
 
     const data = await response.json();
 
-    console.log(data.hits);
     setRecipes(data.hits);
-    console.log(data.hits);
   };
 
   function updateSearch(e) {

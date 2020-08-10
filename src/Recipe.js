@@ -12,7 +12,6 @@ function Recipe({ title, calories, image, ingredients, data }) {
         ))}
       </ul>
       <img className={style.image} src={image} alt="Food" />
-      {console.log(data)}
     </div>
   );
 }
