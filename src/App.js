@@ -43,6 +43,7 @@ function App() {
   return (
     <div className="App">
       <form className="search-form" onSubmit={getSearch}>
+        <h1 className="header">Recipe App</h1>
         <input
           type="text"
           className="search-bar"
@@ -52,6 +53,9 @@ function App() {
         <button type="submit" className="search-button">
           Search
         </button>
+        <p className="header description">
+          Write the ingredient you want and click on "Search" to view recipes!!!
+        </p>
       </form>
       {recipes.map((recipe) => (
         <div className="recipes">

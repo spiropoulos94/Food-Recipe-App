@@ -13,6 +13,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.header {
+  color: gray;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: black;
+}
+
+.header.description {
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .search-bar {
