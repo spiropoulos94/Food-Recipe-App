@@ -8,9 +8,7 @@ function App() {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken");
-
-  // https://api.edamam.com/search?q=chicken&app_id=b52397b0&app_key=de814a8d8bde0d4e9a2d7f7df2ae56c1
+  const [query, setQuery] = useState("");
 
   //const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
@@ -23,9 +21,8 @@ function App() {
   const getRecipes = async () => {
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
-      //{ mode: "no-cors" }
     );
-    //
+
     const data = await response.json();
 
     console.log(data.hits);
@@ -59,10 +56,11 @@ function App() {
       {recipes.map((recipe) => (
         <div className="recipes">
           <Recipe
+            data={recipe}
             key={recipe.recipe.label}
             title={recipe.recipe.label}
             calories={recipe.recipe.calories}
-            image={recipe.image}
+            image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
           />
         </div>
