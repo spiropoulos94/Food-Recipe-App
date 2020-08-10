@@ -58,11 +58,7 @@ function App() {
         </p>
       </form>
       {recipes.map((recipe) => (
-        <a
-          className="recipes"
-          href="https://www.facebook.com/profile.php?id=100006855102607"
-          target="_blank"
-        >
+        <div className="recipes">
           <Recipe
             data={recipe}
             key={recipe.recipe.label}
@@ -71,7 +67,7 @@ function App() {
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
           />
-        </a>
+        </div>
       ))}
     </div>
   );
