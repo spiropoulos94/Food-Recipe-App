@@ -10,6 +10,8 @@ function App() {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken");
 
+  // https://api.edamam.com/search?q=chicken&app_id=b52397b0&app_key=de814a8d8bde0d4e9a2d7f7df2ae56c1
+
   //const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
   useEffect(() => {
@@ -20,10 +22,10 @@ function App() {
 
   const getRecipes = async () => {
     const response = await fetch(
-      `https://api.edamam.com/${query}?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
       //{ mode: "no-cors" }
     );
-
+    //
     const data = await response.json();
 
     console.log(data.hits);
