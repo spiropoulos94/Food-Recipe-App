@@ -56,7 +56,12 @@ function App() {
         </p>
       </form>
       {recipes.map((recipe) => (
-        <a href={recipe.recipe.url} target="_blank" className="recipes">
+        <a
+          href={recipe.recipe.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="recipes"
+        >
           <Recipe
             data={recipe}
             key={recipe.recipe.label}
