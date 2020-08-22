@@ -12,10 +12,29 @@
 
 .image {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 30%;
+  height: 80%;
 }
 
 .title {
   padding-left: 1rem;
+}
+
+.ingredients_photo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+  .ingredients_photo {
+    flex-direction: column;
+  }
+
+  .image {
+    height: 50%;
+  }
 }
