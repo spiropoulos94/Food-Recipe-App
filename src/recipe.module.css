@@ -12,8 +12,8 @@
 
 .image {
   border-radius: 50%;
-  width: 30%;
-  height: 80%;
+  width: 15vw;
+  height: 15vw;
 }
 
 .title {
@@ -25,16 +25,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 60%;
   margin-bottom: 30px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   .ingredients_photo {
     flex-direction: column;
   }
 
   .image {
-    height: 50%;
+    height: 15vh;
   }
 }
