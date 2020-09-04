@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Recipe from "./Recipe";
+import styles from "./homepage.module.scss"
+
+
+
+function TestComponent(){
+  return <p className={styles.recipe}>Im a test component</p>
+}
 
 function App() {
   const APP_ID = "b52397b0";
@@ -40,6 +47,7 @@ function App() {
 
   return (
     <div className="App">
+      <TestComponent/>
       <form className="search-form" onSubmit={getSearch}>
         <h1 className="header">Recipe App</h1>
         <input
