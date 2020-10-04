@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      <TestComponent/>
+      
       <form className="search-form" onSubmit={getSearch}>
         <h1 className="header">Recipe App</h1>
         <input
